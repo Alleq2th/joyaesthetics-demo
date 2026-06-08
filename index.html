@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOYAESTHETICS - Luxury Fashion & Styling</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0d0d0d;
+color:white;
+overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+:root{
+--gold:#d4af37;
+--cream:#f5f1e8;
+--dark:#0d0d0d;
+--card:#171717;
+}
+
+section{
+padding:90px 8%;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+}
+
+a{
+text-decoration:none;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+border-radius:50px;
+transition:.3s;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--gold);
+color:black;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-outline{
+border:1px solid var(--gold);
+color:var(--gold);
+margin-left:10px;
+}
+
+.btn-outline:hover{
+background:var(--gold);
+color:black;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-family:'Cormorant Garamond',serif;
+font-weight:700;
+color:var(--gold);
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+url('https://images.unsplash.com/photo-1496747611176-843222e1e57c');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:5rem;
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+margin-bottom:35px;
+color:#ddd;
+}
+
+.section-title{
+font-size:3rem;
+text-align:center;
+margin-bottom:25px;
+color:var(--gold);
+}
+
+.section-text{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:1.1rem;
+line-height:1.9;
+color:#d7d7d7;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.card{
+background:var(--card);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:var(--gold);
+}
+
+.card h3{
+font-size:2rem;
+margin-bottom:15px;
+color:var(--gold);
+}
+
+.card p{
+color:#ccc;
+line-height:1.7;
+}
+
+.discovery{
+background:#111;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.discovery-box{
+max-width:850px;
+margin:auto;
+padding:50px;
+background:#181818;
+border-radius:25px;
+}
+
+.discovery-box h2{
+font-size:3rem;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.discovery-box p{
+margin-bottom:25px;
+line-height:1.8;
+color:#ddd;
+}
+
+.transformations{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.trans-card{
+height:380px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.trans-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.journey{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.step{
+background:#171717;
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.step h3{
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.consultation{
+text-align:center;
+background:#111;
+}
+
+.consultation h2{
+font-size:3rem;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.consultation p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.footer{
+padding:50px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer h3{
+font-size:2rem;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.footer p{
+margin-bottom:10px;
+color:#ccc;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3.2rem;
+}
+
+.section-title{
+font-size:2.3rem;
+}
+
+.discovery-box{
+padding:30px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">JOYAESTHETICS</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Collections</a>
+<a href="#">Styling</a>
+<a href="#">Bespoke</a>
+<a href="#">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Wear Your Story.<br>Dress With Intention.</h1>
+
+<p>
+Luxury fashion, bespoke tailoring, and personal styling designed
+to help you stand out with confidence and leave a lasting impression.
+</p>
+
+<a href="#" class="btn btn-primary">Explore Collections</a>
+
+<a href="#" class="btn btn-outline">Start Your Style Journey</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">More Than Fashion</h2>
+
+<p class="section-text">
+At JOYAESTHETICS, we believe people don't just wear clothes.
+They wear confidence, culture, identity, and purpose.
+Every piece is intentionally crafted to create an experience that
+goes beyond style and becomes part of your story.
+</p>
+
+</section>
+
+<section>
+
+<h2 class="section-title">What We Offer</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Ready-To-Wear</h3>
+<p>
+Premium casual, Afrocentric, and corporate pieces crafted for modern lifestyles.
+</p>
+</div>
+
+<div class="card">
+<h3>Bespoke Tailoring</h3>
+<p>
+Custom-made garments designed specifically around your personality, fit, and preferences.
+</p>
+</div>
+
+<div class="card">
+<h3>Personal Styling</h3>
+<p>
+Professional styling guidance to help you build a wardrobe that reflects who you are.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="discovery">
+
+<div class="discovery-box">
+
+<h2>Find Your Perfect Style</h2>
+
+<p>
+Take a personalized style assessment and discover fashion recommendations tailored to your identity, lifestyle, and goals.
+</p>
+
+<a href="#" class="btn btn-primary">
+Take Style Assessment
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Confidence You Can Wear</h2>
+
+<div class="transformations">
+
+<div class="trans-card">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
+</div>
+
+<div class="trans-card">
+<img src="https://images.unsplash.com/photo-1495385794356-15371f348c31">
+</div>
+
+<div class="trans-card">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">The Bespoke Journey</h2>
+
+<div class="journey">
+
+<div class="step">
+<h3>1</h3>
+<p>Tell Us Your Vision</p>
+</div>
+
+<div class="step">
+<h3>2</h3>
+<p>Share Inspiration</p>
+</div>
+
+<div class="step">
+<h3>3</h3>
+<p>Measurements & Planning</p>
+</div>
+
+<div class="step">
+<h3>4</h3>
+<p>Receive Your Piece</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="consultation">
+
+<h2>Need Expert Style Guidance?</h2>
+
+<p>
+Book a personal styling session and discover pieces that align with your personality, goals, and lifestyle.
+</p>
+
+<a href="#" class="btn btn-primary">
+Book Consultation
+</a>
+
+</section>
+
+<footer class="footer">
+
+<h3>JOYAESTHETICS</h3>
+
+<p>Luxury Fashion • Bespoke Tailoring • Personal Styling</p>
+
+<p>WhatsApp • Instagram • Email</p>
+
+</footer>
+
+</body>
+  </html>
